@@ -7,11 +7,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4123FC60-1E0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodoList.Api", "src\WebTodoList.Api\WebTodoList.Api.csproj", "{1A61FE16-7B77-4210-B074-A905EF6ABD61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTodoList.Core", "src\WebTodoList.Core\WebTodoList.Core.csproj", "{1CD3A692-16FE-4F87-935D-2EE50C749A1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodoList.Core", "src\WebTodoList.Core\WebTodoList.Core.csproj", "{1CD3A692-16FE-4F87-935D-2EE50C749A1F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F67D423D-B165-4329-B3E2-7B38DC4BBF67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTodoList.Core.Test", "tests\WebTodoList.Core.Test\WebTodoList.Core.Test.csproj", "{92A44BDF-28FC-4BFE-BBCB-89CB274E6BA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodoList.Core.Test", "tests\WebTodoList.Core.Test\WebTodoList.Core.Test.csproj", "{92A44BDF-28FC-4BFE-BBCB-89CB274E6BA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{B987A6A6-5EB2-40A2-BB3C-DD6D128C2319}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
