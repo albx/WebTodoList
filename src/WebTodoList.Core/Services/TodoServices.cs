@@ -19,6 +19,11 @@ namespace WebTodoList.Core.Services
 
         public async Task CreateNewTodoItem(string todoItemText)
         {
+            if (string.IsNullOrWhiteSpace(todoItemText))
+            {
+                throw new ArgumentException("value cannot be empty", nameof(todoItemText));
+            }
+
             var newTodo = TodoItem.NewTodo(todoItemText);
             _context.Add(newTodo);
 
@@ -27,6 +32,11 @@ namespace WebTodoList.Core.Services
 
         public async Task DeleteTodo(Guid todoId)
         {
+            if (todoId == Guid.Empty)
+            {
+                throw new ArgumentException("value cannot be empty", nameof(todoId));
+            }
+
             var todo = _context.TodoItems.Find(todoId);
             todo.Delete();
 
@@ -35,6 +45,11 @@ namespace WebTodoList.Core.Services
 
         public async Task MarkTodoAsDone(Guid todoId)
         {
+            if (todoId == Guid.Empty)
+            {
+                throw new ArgumentException("value cannot be empty", nameof(todoId));
+            }
+
             var todo = _context.TodoItems.Find(todoId);
             todo.MarkAsDone();
 

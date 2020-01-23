@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using WebTodoList.Core.Models;
 
 namespace WebTodoList.Core.Services
@@ -7,6 +8,11 @@ namespace WebTodoList.Core.Services
     {
         public static IQueryable<TodoItem> NotDeleted(this IQueryable<TodoItem> items)
         {
+            if (items == null)
+            {
+                throw new ArgumentNullException(nameof(items));
+            }
+
             return from t in items
                    where !t.IsDeleted
                    select t;
