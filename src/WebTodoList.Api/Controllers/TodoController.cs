@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebTodoList.Api.Services;
-using WebTodoList.Api.ViewModels.Todo;
+using WebTodoList.ViewModels.Todo;
 
 namespace WebTodoList.Api.Controllers
 {

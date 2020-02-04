@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebTodoList.Core\WebTodoList.Core.csproj" />
+    <ProjectReference Include="..\WebTodoList.ViewModels\WebTodoList.ViewModels.csproj" />
   </ItemGroup>
 
 

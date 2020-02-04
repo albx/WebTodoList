@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebTodoList.Api.ViewModels.Todo;
 using WebTodoList.Core.Services;
+using WebTodoList.ViewModels.Todo;
 
 namespace WebTodoList.Api.Services
 {
