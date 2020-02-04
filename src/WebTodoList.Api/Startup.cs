@@ -35,6 +35,16 @@ namespace WebTodoList.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebTodoList - APIs", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Client.BlazorWASM", policy =>
+                {
+                    policy.WithOrigins("http://localhost:64146", "https://localhost:44365")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +62,8 @@ namespace WebTodoList.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebTodoList - APIs");
             });
+
+            app.UseCors("Client.BlazorWASM");
 
             app.UseRouting();
 

@@ -1,0 +1,20 @@
+﻿@if (Items == null)
+{
+    <p><em>Nothing to do! :)</em></p>
+}
+else
+{
+    <ul class="list-unstyled">
+        @foreach (var item in Items)
+        {
+            <li>
+                <span>@item.Text</span>
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<ListItemViewModel> Items { get; set; }
+}

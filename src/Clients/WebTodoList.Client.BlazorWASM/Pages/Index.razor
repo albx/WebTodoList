@@ -1,7 +1,24 @@
 ﻿@page "/"
+@inject HttpClient HttpClient
 
-<h1>Hello, world!</h1>
+<h1>My Todo List</h1>
 
-Welcome to your new app.
+@if (todos == null || !todos.Any())
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <TodoList Items="todos" />
+}
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+    private IList<ListItemViewModel> todos = new List<ListItemViewModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        HttpClient.BaseAddress = new Uri("https://localhost:44387/");
+
+        todos = await HttpClient.GetJsonAsync<IList<ListItemViewModel>>("api/todo");
+    }
+}
