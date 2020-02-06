@@ -3,22 +3,36 @@
 
 <h1>My Todo List</h1>
 
-@if (todos == null || !todos.Any())
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <TodoList Items="todos" />
-}
+<div class="row">
+    <AddTodo OnNewTodoAdded="AddTodoItem" />
+</div>
+<div class="row">
+    @if (todos == null)
+    {
+        <Loader />
+    }
+    else
+    {
+        <TodoList Items="todos" />
+    }
+</div>
 
 @code {
-    private IList<ListItemViewModel> todos = new List<ListItemViewModel>();
+    private IList<ListItemViewModel> todos;
 
     protected override async Task OnInitializedAsync()
     {
-        HttpClient.BaseAddress = new Uri("https://localhost:44387/");
+        await LoadTodoItems();
+    }
 
+    async Task AddTodoItem(string newTodoText)
+    {
+        todos.Add(new ListItemViewModel { Text = newTodoText });
+        await LoadTodoItems();
+    }
+
+    async Task LoadTodoItems()
+    {
         todos = await HttpClient.GetJsonAsync<IList<ListItemViewModel>>("api/todo");
     }
 }

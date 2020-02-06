@@ -1,18 +1,22 @@
-﻿@if (Items == null)
-{
-    <p><em>Nothing to do! :)</em></p>
-}
-else
-{
-    <ul class="list-unstyled">
-        @foreach (var item in Items)
-        {
-            <li>
-                <span>@item.Text</span>
-            </li>
-        }
-    </ul>
-}
+﻿<div class="col-md-12">
+    @if (Items == null)
+    {
+        <div class="alert alert-info">
+            <p>Nothing to do :)</p>
+        </div>
+    }
+    else
+    {
+        <ul class="list-unstyled">
+            @foreach (var item in Items)
+            {
+                <li>
+                    <span>@item.Text</span>
+                </li>
+            }
+        </ul>
+    }
+</div>
 
 @code {
     [Parameter]

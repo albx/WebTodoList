@@ -1,0 +1,34 @@
+﻿@inject HttpClient HttpClient
+
+<div class="col-md-12">
+    <form @onsubmit="AddNewTodo">
+        <div class="form-row">
+            <div class="input-group mb-3">
+                <input type="text" @bind="newTodoText" class="form-control" placeholder="Add a task" aria-label="Add a task" aria-describedby="addTodoButton">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" id="addTodoButton">
+                        <span class="oi oi-plus" aria-hidden="true"></span>
+                        Add new
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@code {
+    private string newTodoText;
+
+    [Parameter]
+    public EventCallback<string> OnNewTodoAdded { get; set; }
+
+    async Task AddNewTodo()
+    {
+        var newTodoViewModel = new NewTodoViewModel { Text = newTodoText };
+
+        await HttpClient.PostJsonAsync("api/todo", newTodoViewModel);
+        await OnNewTodoAdded.InvokeAsync(newTodoText);
+
+        newTodoText = string.Empty;
+    }
+}

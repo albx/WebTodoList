@@ -26,9 +26,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{C6A7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{E2A6A55B-8E75-4755-A786-C18B97EB035D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTodoList.Client.BlazorWASM", "src\Clients\WebTodoList.Client.BlazorWASM\WebTodoList.Client.BlazorWASM.csproj", "{8A447818-61EB-4443-A2C8-D8C6062CEEC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodoList.Client.BlazorWASM", "src\Clients\WebTodoList.Client.BlazorWASM\WebTodoList.Client.BlazorWASM.csproj", "{8A447818-61EB-4443-A2C8-D8C6062CEEC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTodoList.ViewModels", "src\WebTodoList.ViewModels\WebTodoList.ViewModels.csproj", "{6A7A8C3B-2E45-4A20-945B-D9F8D6C068D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodoList.ViewModels", "src\WebTodoList.ViewModels\WebTodoList.ViewModels.csproj", "{6A7A8C3B-2E45-4A20-945B-D9F8D6C068D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
