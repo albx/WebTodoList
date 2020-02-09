@@ -18,9 +18,9 @@ namespace WebTodoList.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(bool hideIfDone = false)
         {
-            var viewModel = ControllerServices.GetTodoListItems();
+            var viewModel = ControllerServices.GetTodoListItems(hideIfDone);
             return Ok(viewModel);
         }
 

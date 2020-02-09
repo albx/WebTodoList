@@ -20,14 +20,14 @@
     private string newTodoText;
 
     [Parameter]
-    public EventCallback<string> OnNewTodoAdded { get; set; }
+    public EventCallback<string> OnNewTodoItemAdded { get; set; }
 
     async Task AddNewTodo()
     {
         var newTodoViewModel = new NewTodoViewModel { Text = newTodoText };
 
         await HttpClient.PostJsonAsync("api/todo", newTodoViewModel);
-        await OnNewTodoAdded.InvokeAsync(newTodoText);
+        await OnNewTodoItemAdded.InvokeAsync(newTodoText);
 
         newTodoText = string.Empty;
     }

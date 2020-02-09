@@ -16,10 +16,17 @@ namespace WebTodoList.Api.Services
             _todoServices = todoServices ?? throw new ArgumentNullException(nameof(todoServices));
         }
 
-        public IEnumerable<ListItemViewModel> GetTodoListItems()
+        public IEnumerable<ListItemViewModel> GetTodoListItems(bool hideIfDone)
         {
-            var todos = _todoServices.Find()
-                .NotDeleted()
+            var todoQuery = _todoServices.Find()
+                .NotDeleted();
+
+            if (hideIfDone)
+            {
+                todoQuery = todoQuery.NotCompleted();
+            }
+
+            var todos = todoQuery
                 .Select(t => new ListItemViewModel
                 {
                     Id = t.Id,

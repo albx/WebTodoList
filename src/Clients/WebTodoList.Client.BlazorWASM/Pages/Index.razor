@@ -4,7 +4,7 @@
 <h1>My Todo List</h1>
 
 <div class="row">
-    <AddTodo OnNewTodoAdded="AddTodoItem" />
+    <AddTodo OnNewTodoItemAdded="AddTodoItem" />
 </div>
 <div class="row">
     @if (todos == null)
@@ -13,12 +13,17 @@
     }
     else
     {
-        <TodoList Items="todos" />
+        <TodoList Items="todos"
+                  OnToggleCompletedItems="ToggleCompletedItems"
+                  OnTodoItemMarkedAsDone="MarkItemAsDone"
+                  OnTodoItemDeleted="RemoveItem"/>
     }
 </div>
 
 @code {
     private IList<ListItemViewModel> todos;
+
+    private bool hideIfDone = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -27,12 +32,40 @@
 
     async Task AddTodoItem(string newTodoText)
     {
-        todos.Add(new ListItemViewModel { Text = newTodoText });
-        await LoadTodoItems();
+        todos?.Add(new ListItemViewModel { Text = newTodoText });
+        await LoadTodoItems(hideIfDone);
     }
 
-    async Task LoadTodoItems()
+    void MarkItemAsDone(ListItemViewModel item)
     {
-        todos = await HttpClient.GetJsonAsync<IList<ListItemViewModel>>("api/todo");
+        var todoItem = todos.SingleOrDefault(t => t.Id == item.Id);
+        if (todoItem != null)
+        {
+            todoItem.IsDone = true;
+            if (hideIfDone)
+            {
+                todos.Remove(todoItem);
+            }
+        }
+    }
+
+    void RemoveItem(ListItemViewModel item)
+    {
+        var todoItem = todos.SingleOrDefault(t => t.Id == item.Id);
+        if (todoItem != null)
+        {
+            todos.Remove(todoItem);
+        }
+    }
+
+    async Task ToggleCompletedItems(bool hideCompletedItems)
+    {
+        hideIfDone = hideCompletedItems;
+        await LoadTodoItems(hideIfDone);
+    }
+
+    async Task LoadTodoItems(bool hideCompletedItems = false)
+    {
+        todos = await HttpClient.GetJsonAsync<IList<ListItemViewModel>>($"api/todo?hideIfDone={hideCompletedItems}");
     }
 }
