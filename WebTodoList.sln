@@ -30,6 +30,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodoList.Client.BlazorWA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodoList.ViewModels", "src\WebTodoList.ViewModels\WebTodoList.ViewModels.csproj", "{6A7A8C3B-2E45-4A20-945B-D9F8D6C068D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTodoList.Client.ReactJs", "src\Clients\WebTodoList.Client.ReactJs\WebTodoList.Client.ReactJs.csproj", "{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +102,18 @@ Global
 		{6A7A8C3B-2E45-4A20-945B-D9F8D6C068D4}.Release|x64.Build.0 = Release|Any CPU
 		{6A7A8C3B-2E45-4A20-945B-D9F8D6C068D4}.Release|x86.ActiveCfg = Release|Any CPU
 		{6A7A8C3B-2E45-4A20-945B-D9F8D6C068D4}.Release|x86.Build.0 = Release|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Debug|x64.Build.0 = Debug|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Debug|x86.Build.0 = Debug|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Release|x64.ActiveCfg = Release|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Release|x64.Build.0 = Release|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Release|x86.ActiveCfg = Release|Any CPU
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +125,7 @@ Global
 		{E2A6A55B-8E75-4755-A786-C18B97EB035D} = {4123FC60-1E01-4FC6-B61E-55F107B7B5E8}
 		{8A447818-61EB-4443-A2C8-D8C6062CEEC6} = {E2A6A55B-8E75-4755-A786-C18B97EB035D}
 		{6A7A8C3B-2E45-4A20-945B-D9F8D6C068D4} = {4123FC60-1E01-4FC6-B61E-55F107B7B5E8}
+		{EE1E080A-ED77-42C0-81DC-3B0B398F2D44} = {E2A6A55B-8E75-4755-A786-C18B97EB035D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C82D821C-A61B-4A7B-8275-7DE189691939}
