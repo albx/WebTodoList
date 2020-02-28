@@ -4,4 +4,4 @@
 
 Simple todo list to compare blazor to react as clients.
 
-The purpose of this project is to compare Blazor Webassembly to popular javascript frameworks, such as VueJS, as client which consume a set of APIs.
+The purpose of this project is to compare Blazor Webassembly to popular javascript frameworks, such as ReactJS, as client which consume a set of APIs.
