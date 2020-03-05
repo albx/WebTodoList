@@ -44,6 +44,13 @@ namespace WebTodoList.Api
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
+
+                options.AddPolicy("Client.ReactJs", policy =>
+                {
+                    policy.WithOrigins("http://localhost:50751", "https://localhost:44393")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
             });
         }
 
@@ -63,7 +70,7 @@ namespace WebTodoList.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebTodoList - APIs");
             });
 
-            app.UseCors("Client.BlazorWASM");
+            app.UseCors("Client.BlazorWASM").UseCors("Client.ReactJs");
 
             app.UseRouting();
 

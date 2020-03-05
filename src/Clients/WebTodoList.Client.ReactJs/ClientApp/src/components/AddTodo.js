@@ -12,7 +12,7 @@ class AddTodo extends Component {
                             <input type="text" className="form-control" placeholder="Add a task" aria-label="Add a task" aria-describedby="addTodoButton" />
                             <div className="input-group-append">
                                 <button className="btn btn-outline-secondary" type="submit" id="addTodoButton">
-                                    <span class="oi oi-plus" aria-hidden="true"></span>
+                                    <span className="oi oi-plus" aria-hidden="true"></span>
                                     Add new
                                 </button>
                             </div>
