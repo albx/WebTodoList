@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Text;
-using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 namespace WebTodoList.Client.BlazorWASM
 {
@@ -22,6 +20,7 @@ namespace WebTodoList.Client.BlazorWASM
 
         private static void RegisterServices(WebAssemblyHostBuilder builder)
         {
+            builder.Services.AddBaseAddressHttpClient();
             builder.Services.AddScoped<HttpClient>(s => new HttpClient
             {
                 BaseAddress = new Uri("https://localhost:44387/")
