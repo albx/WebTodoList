@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 
+import ListItemViewModel from '../viewModels/ListItemViewModel';
+
 export class Home extends Component {
   static displayName = Home.name;
 
@@ -17,6 +19,7 @@ export class Home extends Component {
   loadTodoItems() {
     fetch('https://localhost:44387/api/todo')
       .then((response) => response.json())
+      .then((items) => items.map(item => ListItemViewModel.map(item.id, item.text, item.isDone)))
       .then((items) => {
         this.setState({ todos: items });
       });
