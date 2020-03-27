@@ -17,9 +17,10 @@ class AddTodo extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault();
-        console.log(this.state.newTodoText);
+        
+        const { newTodoText } = this.state;
 
-        let newTodoItemViewModel = new NewTodoViewModel(this.state.newTodoText);
+        let newTodoItemViewModel = new NewTodoViewModel(newTodoText);
 
         fetch('https://localhost:44387/api/todo', {
             headers: {
@@ -31,6 +32,8 @@ class AddTodo extends Component {
             this.setState({
                 newTodoText: ''
             });
+
+            this.props.onNewTodoItemAdded();
         }).catch((response) => {
             alert('ERROR!');
         })

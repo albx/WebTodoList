@@ -30,7 +30,7 @@ export class Home extends Component {
       <div>
         <h1>My Todo List</h1>
         <div className="row">
-          <AddTodo />
+          <AddTodo onNewTodoItemAdded={() => this.loadTodoItems()} />
         </div>
         <div className="row">
           <TodoList items={this.state.todos} />
