@@ -1,6 +1,4 @@
-﻿@inject HttpClient HttpClient
-
-<div class="col-md-12">
+﻿<div class="col-md-12">
     @if (Items == null)
     {
         <div class="alert alert-info">
@@ -31,37 +29,3 @@
         </div>
     }
 </div>
-
-@code {
-    [Parameter]
-    public IEnumerable<ListItemViewModel> Items { get; set; }
-
-    [Parameter]
-    public EventCallback<ListItemViewModel> OnTodoItemMarkedAsDone { get; set; }
-
-    [Parameter]
-    public EventCallback<ListItemViewModel> OnTodoItemDeleted { get; set; }
-
-    [Parameter]
-    public EventCallback<bool> OnToggleCompletedItems { get; set; }
-
-    private bool hideCompletedTask = false;
-
-    async Task MarkTodoItemAsDone(ListItemViewModel item)
-    {
-        await HttpClient.PatchAsync($"api/todo/{item.Id}/done", null);
-        await OnTodoItemMarkedAsDone.InvokeAsync(item);
-    }
-
-    async Task DeleteTodoItem(ListItemViewModel item)
-    {
-        await HttpClient.DeleteAsync($"api/todo/{item.Id}");
-        await OnTodoItemDeleted.InvokeAsync(item);
-    }
-
-    async Task ToggleCompletedItems()
-    {
-        hideCompletedTask = !hideCompletedTask;
-        await OnToggleCompletedItems.InvokeAsync(hideCompletedTask);
-    }
-}
