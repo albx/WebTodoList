@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using WebTodoList.ViewModels.Todo;
 
@@ -57,7 +58,7 @@ namespace WebTodoList.Client.BlazorWASM.Pages
 
         async Task LoadTodoItems(bool hideCompletedItems = false)
         {
-            todos = await HttpClient.GetJsonAsync<IList<ListItemViewModel>>($"api/todo?hideIfDone={hideCompletedItems}");
+            todos = await HttpClient.GetFromJsonAsync<IList<ListItemViewModel>>($"api/todo?hideIfDone={hideCompletedItems}");
         }
     }
 }

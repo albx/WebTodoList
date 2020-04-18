@@ -20,8 +20,7 @@ namespace WebTodoList.Client.BlazorWASM
 
         private static void RegisterServices(WebAssemblyHostBuilder builder)
         {
-            builder.Services.AddBaseAddressHttpClient();
-            builder.Services.AddScoped<HttpClient>(s => new HttpClient
+            builder.Services.AddSingleton(new HttpClient
             {
                 BaseAddress = new Uri("https://localhost:44387/")
             });

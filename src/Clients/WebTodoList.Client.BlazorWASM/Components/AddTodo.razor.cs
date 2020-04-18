@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using WebTodoList.ViewModels.Todo;
 
@@ -19,7 +20,7 @@ namespace WebTodoList.Client.BlazorWASM.Components
         {
             var newTodoViewModel = new NewTodoViewModel { Text = newTodoText };
 
-            await HttpClient.PostJsonAsync("api/todo", newTodoViewModel);
+            await HttpClient.PostAsJsonAsync("api/todo", newTodoViewModel);
             await OnNewTodoItemAdded.InvokeAsync(newTodoText);
 
             newTodoText = string.Empty;
