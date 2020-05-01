@@ -12,13 +12,13 @@ Up to now it lacks all a set of test suite for the clients projects (Blazor WebA
 
 In order to run the client using Blazor WebAssembly, first of all you need at least .NET Core SDK version 3.1.201.
 
-After installing the .NET Core SDK, you have to install Blazor WebAssembly Preview4 running this command
+After installing the .NET Core SDK, you have to install Blazor WebAssembly RC1 running this command
 
 ```
-dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0-preview4.20210.8
+dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0-rc1.20223.4
 ```
 
-(You can follow the post at [https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-4-release-now-available/](https://devblogs.microsoft.com/aspnet/blazor-webassembly-3-2-0-preview-4-release-now-available/))
+(You can follow the documentation at [https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio](https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio))
 
 ## Projects
 
