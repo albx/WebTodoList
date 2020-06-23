@@ -10,15 +10,7 @@ Up to now it lacks all a set of test suite for the clients projects (Blazor WebA
 
 ## Requirements
 
-In order to run the client using Blazor WebAssembly, first of all you need at least .NET Core SDK version 3.1.201.
-
-After installing the .NET Core SDK, you have to install Blazor WebAssembly RC1 running this command
-
-```
-dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0-rc1.20223.4
-```
-
-(You can follow the documentation at [https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio](https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio))
+In order to run the client using Blazor WebAssembly, you should install the latest .NET Core SDK and follow the documentation at [https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio](https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio).
 
 ## Projects
 
@@ -36,7 +28,7 @@ Running this project you can go to https://localhost:44387/swagger to browse a S
 ### WebTodoList.Client.BlazorWASM
 This project is placed under the src/Clients directory.
 
-It uses Blazor WebAssembly (Preview 4) to build a SPA client which call the endpoints described previously.
+It uses Blazor WebAssembly to build a SPA client which call the endpoints described previously.
 
 ### WebTodoList.Client.ReactJS
 This project is placed under the src/Clients directory.
