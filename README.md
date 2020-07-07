@@ -12,6 +12,19 @@ Up to now it lacks all a set of test suite for the clients projects (Blazor WebA
 
 In order to run the client using Blazor WebAssembly, you should install the latest .NET Core SDK and follow the documentation at [https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio](https://docs.microsoft.com/it-it/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio).
 
+## Setup
+Before running the projects you have to create the SQLite database using the EntityFrameworkCore migrations.
+
+If you're using VisualStudio, you can set the WebTodoList.Api project as Startup project, open the Package Manager Console and choose WebTodoList.Core as Default project in the combobox. After this you can run the ```Update-Database``` command.
+
+If you are using the dotnet CLI, ensure you have installed the ef tools, runnig the command 
+
+```dotnet tool install --global dotnet-ef```, 
+
+then you can run the initdb.ps1 script (you can find it in the root folder) or just copy and paste the command 
+
+```dotnet ef database update -p .\src\WebTodoList.Core\WebTodoList.Core.csproj -s .\src\WebTodoList.Api\WebTodoList.Api.csproj``` 
+
 ## Projects
 
 This solutions is composed of 3 main projects:
