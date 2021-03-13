@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebTodoList.ViewModels.Todo
 {
-    public class NewTodoViewModel
-    {
-        public string Text { get; set; }
-    }
+    public record NewTodoViewModel([Required]string Text);
 }

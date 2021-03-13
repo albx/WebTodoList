@@ -1,4 +1,6 @@
-﻿<div class="col-md-12">
+﻿@inject IStringLocalizer<Resources.Components.AddTodo> localizer
+
+<div class="col-md-12">
     <form @onsubmit="AddNewTodo">
         <div class="form-row">
             <div class="input-group mb-3">
@@ -6,7 +8,7 @@
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit" id="addTodoButton">
                         <span class="oi oi-plus" aria-hidden="true"></span>
-                        Add new
+                        @localizer[nameof(Resources.Components.AddTodo.AddNewLabel)]
                     </button>
                 </div>
             </div>

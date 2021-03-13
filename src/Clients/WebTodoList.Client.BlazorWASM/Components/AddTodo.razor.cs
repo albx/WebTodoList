@@ -18,7 +18,7 @@ namespace WebTodoList.Client.BlazorWASM.Components
 
         async Task AddNewTodo()
         {
-            var newTodoViewModel = new NewTodoViewModel { Text = newTodoText };
+            var newTodoViewModel = new NewTodoViewModel(newTodoText);
 
             await HttpClient.PostAsJsonAsync("api/todo", newTodoViewModel);
             await OnNewTodoItemAdded.InvokeAsync(newTodoText);

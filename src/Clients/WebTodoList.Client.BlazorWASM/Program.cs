@@ -24,6 +24,8 @@ namespace WebTodoList.Client.BlazorWASM
             {
                 BaseAddress = new Uri("https://localhost:44387/")
             });
+
+            builder.Services.AddLocalization();
         }
     }
 }
