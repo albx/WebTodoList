@@ -1,15 +1,17 @@
-﻿<div class="col-md-12">
+﻿@inject IStringLocalizer<Resources.Components.TodoList> localizer
+
+<div class="col-md-12">
     @if (Items == null)
     {
         <div class="alert alert-info">
-            <p>Nothing to do :)</p>
+            <p>@localizer[nameof(Resources.Components.TodoList.NothingToDo)]</p>
         </div>
     }
     else
     {
         <div class="custom-control custom-switch">
             <input @onchange="ToggleCompletedItems" type="checkbox" class="custom-control-input" id="hideTaskIfDone">
-            <label class="custom-control-label" for="hideTaskIfDone">Hide completed task</label>
+            <label class="custom-control-label" for="hideTaskIfDone">@localizer[nameof(Resources.Components.TodoList.HideCompletedTask)]</label>
         </div>
         <hr />
         <div class="list-group">
@@ -20,9 +22,9 @@
                     <label class="form-check-label" for="@($"{item.Id}-is-done")" style="@(item.IsDone ? "text-decoration: line-through;" : "")">
                         @item.Text
                     </label>
-                    <button @onclick="() => DeleteTodoItem(item)" type="button" class="btn btn-outline-danger" title="Delete this item">
+                    <button @onclick="() => DeleteTodoItem(item)" type="button" class="btn btn-outline-danger" title="@localizer[nameof(Resources.Components.TodoList.DeleteLabel)]">
                         <span class="oi oi-trash"></span>
-                        <span class="sr-only">Delete</span>
+                        <span class="sr-only">@localizer[nameof(Resources.Components.TodoList.DeleteLabel)]</span>
                     </button>
                 </div>
             }

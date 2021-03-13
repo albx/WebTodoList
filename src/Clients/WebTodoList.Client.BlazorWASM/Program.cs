@@ -13,17 +13,19 @@ namespace WebTodoList.Client.BlazorWASM
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             RegisterServices(builder);
 
-            builder.RootComponents.Add<App>("app");
+            builder.RootComponents.Add<App>("#app");
 
             await builder.Build().RunAsync();
         }
 
         private static void RegisterServices(WebAssemblyHostBuilder builder)
         {
-            builder.Services.AddSingleton(new HttpClient
+            builder.Services.AddScoped(sp => new HttpClient
             {
                 BaseAddress = new Uri("https://localhost:44387/")
             });
+
+            builder.Services.AddLocalization();
         }
     }
 }

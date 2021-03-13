@@ -1,6 +1,7 @@
 ﻿@page "/"
+@inject IStringLocalizer<Resources.Pages.Index> localizer
 
-<h1>My Todo List</h1>
+<h1>@localizer[nameof(Resources.Pages.Index.PageTitle)]</h1>
 
 <div class="row">
     <AddTodo OnNewTodoItemAdded="AddTodoItem" />
