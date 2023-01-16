@@ -2,6 +2,9 @@ name: WebTodoList Build
 
 on: [push]
 
+env:
+  NET_VERSION: '6.x'
+
 jobs:
   build:
 
@@ -13,9 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 5.0.201
+        dotnet-version: ${{ env.NET_VERSION }}
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Run unit tests
